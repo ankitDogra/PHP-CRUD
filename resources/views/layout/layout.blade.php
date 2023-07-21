@@ -17,6 +17,7 @@
         }
     </style>
     <title>@yield('title')</title>
+    <link rel="icon" href="https://zibal.in/assets/img/zibal-logo2.png" type="image/icon type">
 </head>
 <body>
     <header>
