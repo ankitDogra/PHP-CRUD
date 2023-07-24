@@ -23,9 +23,9 @@
                         <td>{{ $data->name }}</td>
                         <td>{{ $data->registration_no }}</td>
                         <td>{{ $data->role }}</td>
-                        <td class="text-center"><a class="btn btn-primary" href="{{route('employees.edit', ['emp' => $data])}}">Edit</a></td>
+                        <td class="text-center"><a class="btn btn-primary" href="{{route('employees.edit', ['emp' => $data->id])}}">Edit</a></td>
                         <td class="text-center">
-                            <form method="post" action="{{ route('employees.destroy', ['emp' => $data]) }}" onsubmit="return confirm('Are you sure you want to delete this employee?')">
+                            <form method="post" action="{{ route('employees.destroy', ['emp' => $data->id]) }}" onsubmit="return confirm('Are you sure you want to delete this employee?')">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger">Delete</button>

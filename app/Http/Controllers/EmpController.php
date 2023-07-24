@@ -37,14 +37,15 @@ class EmpController extends Controller
         return view('employees.edit', compact('emp'));
     }
 
-    public function updated(Request $request, employees $emp){
+    public function updated(Request $request, int $find){
+        $emp = employees::find($find);
         $data = $request->validate([
             'name' => 'required|alpha_spaces',
             'reg-no' => "required|unique:employees,registration_no,{$emp->registration_no},registration_no|numeric",
             'role' => 'required'
         ]);
 
-        if(!$emp){
+        if(!$find){
             echo "No Data found!!";
         }
 
@@ -57,7 +58,8 @@ class EmpController extends Controller
         return redirect(route('employees.index'))->with('success', 'Employee Details updated Successfully!!');
     }
 
-    public function destroy(employees $emp){
+    public function destroy(int $del){
+        $emp = employees::find($del); 
         $emp->delete();
         return redirect(route('employees.index'))->with('destroy', 'Employee Details deleted Successfully!!');
     }
