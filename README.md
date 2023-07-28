@@ -29,12 +29,12 @@ The Employee Management System is a web application built with Laravel, a popula
 1. Clone the repository:
    
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/ankitDogra/PHP-CRUD.git
    ```
 2. Navigate to the project folder:
    
    ```bash
-    cd your-repo
+    cd PHP-CRUD
     ```
 3. Install dependencies using Composer:
    
