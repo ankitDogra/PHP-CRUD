@@ -26,43 +26,69 @@ The Employee Management System is a web application built with Laravel, a popula
 
 ## Installation
 
-1. Clone the repository:
-   
-   ```bash
-   git clone https://github.com/ankitDogra/PHP-CRUD.git
-   ```
-2. Navigate to the project folder:
-   
-   ```bash
-    cd PHP-CRUD
-    ```
+1. Prerequisites:
+     - Ensure that you have PHP and Composer installed on your PC. You can download PHP from the official website (https://www.php.net/downloads.php) and Composer from https://getcomposer.org/download/.
+       
+2. Clone the Repository:
+    - Open a terminal or command prompt on your PC.
+    - Navigate to the directory where you want to install the project.
+    - Clone the repository using the following command:
+      
+       ```bash
+       git clone https://github.com/ankitDogra/PHP-CRUD.git
+        ```
 3. Install dependencies using Composer:
-   
-   ```bash
-    composer install
-   ```
-4. Create a new `.env` file by copying `.env.example`:
-   
-   ```bash
-    cp .env.example .env
-    ```
-5. Generate an application key:
+   - Change into the project directory:
+     
+       ```bash
+        cd PHP-CRUD
+       ```
+    - Install the required dependencies using Composer:
+      
+      ```bash
+      composer install
+      ```
+4. Set Up the Database:
+    - Create a new MySQL database for the project.
+    - In the project root directory, rename the .env.example file to .env:
+      
+       ```bash
+        cp .env.example .env
+        ```
+    - Open the .env file in a text editor and update the following lines with your database credentials:
 
-   ```bash
-    php artisan key:generate
-   ```
-6. Set up your database configuration in the `.env` file.
+      ```makefile
+        DB_CONNECTION=mysql
+        DB_HOST=your_database_host
+        DB_PORT=your_database_port
+        DB_DATABASE=your_database_name
+        DB_USERNAME=your_database_username
+        DB_PASSWORD=your_database_password
+       ```
+5. Generate Application Key:
 
-7. Run database migrations and seed the database:
+    - Generate a new application key for your project:
 
-   ```bash
-    php artisan migrate --seed
-    ```
-8. Start the development server:
+       ```bash
+        php artisan key:generate
+       ```
+6. Run the Development Server:
 
-   ```bash
-    php artisan serve
-   ```
+    - Start the built-in development server:
+      
+       ```bash
+       php artisan serve
+       ```
+    - You should see a message like "Laravel development server started on http://localhost:8000".
+
+
+That's it! You should now have the PHP CRUD application up and running on your PC. The user can access the application through the provided URL (http://localhost:8000) and start using it to perform CRUD operations on data.
+
+Please note that these instructions assume that the user has access to a MySQL database server. If they are using a different database server, they should update the .env file accordingly.
+
+Additionally, if the user wants to deploy the application to a production environment, they should consider using a web server like Apache or Nginx, as well as properly securing the environment and database credentials.
+
+
 ## Usage
 ```vbnet
 1. Access the application in your web browser at `http://localhost:8000`.
