@@ -1,4 +1,5 @@
 # Employee Management System
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A simple Employee Management System built with Laravel and Bootstrap.
 
