@@ -9,6 +9,11 @@
         .add-entry{
             position:absolute;
             top     : 7.5px;
+            right   : 120px;
+        }
+        .add-post{
+            position:absolute;
+            top     : 7.5px;
             right   : 10px;
         }
 

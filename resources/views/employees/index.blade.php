@@ -5,7 +5,8 @@
 @section('content')
 <div class="container">
     <h2 class="text-center">Data Display</h2>
-    <a href="{{ route('employees.add') }}" class="btn btn-success add-entry">+</a>
+    <a href="{{ route('employees.add') }}" class="btn btn-success add-entry">Add an Employee</a>
+    <a href="{{ route('employees.add') }}" class="btn btn-secondary add-post">Add a Post</a>
 
     @if (!$emp->isEmpty())
         <table class="table table-bordered table-hover">
