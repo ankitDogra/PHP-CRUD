@@ -25,7 +25,7 @@
         <option>Junior Software Developer</option>
       </select>
     </div>
-    <div class="text-center"> <!-- Center the "Add" button -->
+    <div class="text-center">
       <button type="submit" class="btn btn-success">Add</button>
     </div>
   </form>

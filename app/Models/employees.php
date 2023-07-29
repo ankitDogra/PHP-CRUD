@@ -15,4 +15,8 @@ class employees extends Model
         'registration_no',
         'role' 
     ];
+
+    public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
 }

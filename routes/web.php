@@ -22,6 +22,10 @@ Route::get('/employee', [EmpController::class, 'index'])->name('employees.index'
 
 Route::get('/employee/add', [EmpController::class, 'add'])->name('employees.add');
 
+Route::get('/posts/create', [EmpController::class, 'post_create'])->name('posts.create');
+
+Route::post('/posts/post', [EmpController::class, 'post_store'])->name('posts.store');
+
 Route::post('/employee', [EmpController::class, 'store'])->name('employees.store');
 
 Route::get('/employee/{emp}/edit', [EmpController::class, 'edit'])->name('employees.edit');
