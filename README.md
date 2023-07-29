@@ -1,66 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Employee Management System
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A simple Employee Management System built with Laravel and Bootstrap.
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Description](#description)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Description
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The Employee Management System is a web application built with Laravel, a popular PHP framework, and styled using Bootstrap for a clean and professional look. It allows users to manage employee data, such as names, registration numbers, and roles. The system provides basic CRUD (Create, Read, Update, Delete) operations for employees.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Add new employees with their details (name, registration number, role).
+- View a list of existing employees with their data.
+- Edit the details of an employee.
+- Delete an employee from the system.
+- Input validation to ensure data integrity.
+- Flash messages to provide user feedback on successful operations.
+- Responsive design for seamless usage on various devices.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Prerequisites:
+     - Ensure that you have PHP and Composer installed on your PC. You can download PHP from the official website (https://www.php.net/downloads.php) and Composer from https://getcomposer.org/download/.
+       
+2. Clone the Repository:
+    - Open a terminal or command prompt on your PC.
+    - Navigate to the directory where you want to install the project.
+    - Clone the repository using the following command:
+      
+       ```bash
+       git clone https://github.com/ankitDogra/PHP-CRUD.git
+        ```
+3. Install dependencies using Composer:
+   - Change into the project directory:
+     
+       ```bash
+        cd PHP-CRUD
+       ```
+    - Install the required dependencies using Composer:
+      
+      ```bash
+      composer install
+      ```
+4. Set Up the Database:
+    - Create a new MySQL database for the project.
+    - In the project root directory, rename the .env.example file to .env:
+      
+       ```bash
+        cp .env.example .env
+        ```
+    - Open the .env file in a text editor and update the following lines with your database credentials:
 
-## Laravel Sponsors
+      ```makefile
+        DB_CONNECTION=mysql
+        DB_HOST=your_database_host
+        DB_PORT=your_database_port
+        DB_DATABASE=your_database_name
+        DB_USERNAME=your_database_username
+        DB_PASSWORD=your_database_password
+       ```
+5. Generate Application Key:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    - Generate a new application key for your project:
 
-### Premium Partners
+       ```bash
+        php artisan key:generate
+       ```
+6. Run the Development Server:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    - Start the built-in development server:
+      
+       ```bash
+       php artisan serve
+       ```
+    - You should see a message like "Laravel development server started on http://localhost:8000".
 
+
+That's it! You should now have the PHP CRUD application up and running on your PC. The user can access the application through the provided URL (http://localhost:8000) and start using it to perform CRUD operations on data.
+
+Please note that these instructions assume that the user has access to a MySQL database server. If they are using a different database server, they should update the .env file accordingly.
+
+Additionally, if the user wants to deploy the application to a production environment, they should consider using a web server like Apache or Nginx, as well as properly securing the environment and database credentials.
+
+
+## Usage
+```vbnet
+1. Access the application in your web browser at `http://localhost:8000`.
+
+2. Use the navigation to add, view, edit, and delete employees.
+
+3. Fill in the required fields to add a new employee. Make sure to enter a unique registration number.
+
+4. Click the "Edit" button in the "Actions" column to modify an employee's details.
+
+5. Click the "Delete" button in the "Actions" column to remove an employee from the system.
+```
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Contributions are welcome! If you find any bugs or have suggestions for improvement, feel free to create an issue or submit a pull request.
