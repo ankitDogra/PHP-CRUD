@@ -15,7 +15,7 @@
                     <th>Name</th>
                     <th>Registration Number</th>
                     <th>Role</th>
-                    <th colspan="2" class="text-center">Actions</th>
+                    <th colspan="3" class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +32,7 @@
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
+                        <td class="text-center"><a class="btn btn-warning" href="{{route('posts.show', ['reg' => $data->registration_no])}}">Posts</a></td>
                     </tr>
                 @endforeach
             </tbody>

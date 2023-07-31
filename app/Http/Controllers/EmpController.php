@@ -34,31 +34,6 @@ class EmpController extends Controller
         return redirect(route('employees.index'))->with('success', 'Employee Details added Successfully!!');
     }
 
-    public function post_create(){
-        $employees = employees::all();
-        return view('employees.post', compact('employees'));
-    }
-    public function post_store(Request $request){
-        $request->validate([
-            'registration_no' => 'required|exists:employees,registration_no',
-            'post' => 'required',
-        ]);
-
-        $employee = employees::where('registration_no', $request->registration_no)->firstOrFail();
-        
-        $post = new Post([
-            'post' => $request->post,
-        ]);
-        
-        $post->registration_no = $request->registration_no;
-        $post->name = $employee->name;
-
-        $post->save();
-
-        return redirect()->route('posts.create')->with('success', 'Post created successfully!');
-    }
-
-
     public function edit(employees $emp){
         return view('employees.edit', compact('emp'));
     }
@@ -88,5 +63,36 @@ class EmpController extends Controller
         $emp = employees::find($del); 
         $emp->delete();
         return redirect(route('employees.index'))->with('destroy', 'Employee Details deleted Successfully!!');
+    }
+
+    public function post_create(){
+        $employees = employees::all();
+        return view('employees.post', compact('employees'));
+    }
+
+    public function post_store(Request $request){
+        $request->validate([
+            'registration_no' => 'required|exists:employees,registration_no',
+            'post' => 'required',
+        ]);
+
+        $employee = employees::where('registration_no', $request->registration_no)->firstOrFail();
+        
+        $post = new Post([
+            'post' => $request->post,
+        ]);
+        
+        $post->registration_no = $request->registration_no;
+        $post->name = $employee->name;
+
+        $post->save();
+
+        return redirect()->route('posts.create')->with('success', 'Post created successfully!');
+    }
+
+
+    public function show($reg){
+        $posts = Post::where('registration_no', $reg)->get();
+        return view('employees.show_posts', ['posts' => $posts]);
     }
 }

@@ -33,3 +33,5 @@ Route::get('/employee/{emp}/edit', [EmpController::class, 'edit'])->name('employ
 Route::put('/employee/{emp}', [EmpController::class, 'updated'])->name('employees.updated');
 
 Route::delete('/employee/{emp}/destroy', [EmpController::class, 'destroy'])->name('employees.destroy');
+
+Route::get('/posts/show/{reg}', [EmpController::class, 'show'])->name('posts.show');
